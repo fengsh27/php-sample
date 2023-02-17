@@ -16,6 +16,7 @@ services:
             MYSQL_USER: user
             MYSQL_PASSWORD: test
             MYSQL_DATABASE: test
+            MYSQL_PORT: 3306
     mysql:
         container_name: mysql-db
         image: mysql

@@ -10,9 +10,11 @@ foreach ($headers as $key => $header) {
     echo "$key: $header <br/>";
 }
 
-$host = $_SERVER['MYSQL_HOST'];
-$user = $_SERVER['MYSQL_USER'];
-$pass = $_SERVER['MYSQL_PASSWORD'];
+$host = getenv("MYSQL_HOST");
+$port = getenv("MYSQL_PORT");
+$host = "$host:$port";
+$user = getenv("MYSQL_USER");
+$pass = getenv("MYSQL_PASSWORD");
 $conn = new mysqli($host, $user, $pass);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
